@@ -1,0 +1,120 @@
+.wid100{
+  background: #FFFFFF;
+  //height: 100vh;
+  margin-left: 20px;
+}
+.el-tag{
+  height: 26px;
+  line-height: 26px;
+}
+.slotFooter
+{
+  background: #ffffff;
+  position: absolute;
+  border-top: 1px solid #e8e8e8;
+  padding: 20px;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 36px;
+  margin-left: -60px;
+  width: 100%;
+}
+
+
+.btnImp1{
+background: rgb(58, 113, 168);
+border: 1px solid rgb(58, 113, 168);
+color: rgb(255, 255, 255);
+}
+.btnImp2{
+  background: rgb(26, 179, 148);
+  border: 1px solid rgb(26, 179, 148);
+  color: rgb(255, 255, 255);
+}
+.wid100Tab{
+  margin-left: 20px;
+}
+.searchFoot{
+  display:flex;justify-content: center
+}
+.formTitle{
+  color: #606266;
+  font-weight: bold;
+  font-size: 17px;
+  font-family: 'Medium';
+  display: flex;
+  align-items: center;
+  background: rgb(228, 227, 227);
+  margin-bottom: 50px;
+  padding: 14px 0 14px 10px;
+  position: relative;
+  &::before{
+    content: ' ';
+    position: absolute;
+    width: 3px;
+    height: 100%;
+    left: 0;
+    display: inline-block;
+    background-color: #409EFF;
+    border-radius: 10px;
+  }
+}
+.footer-button {
+  width: 100%;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  //background: #fff;
+  text-align: center;
+  padding: 20px;
+
+  //box-shadow: 0 -2px 4px  rgba(0, 0, 0, 0.15);
+  z-index: 1  ;
+}
+.addFileTitle{
+  font-weight: bold;
+  font-size: 17px;
+  padding:0 20px;
+}
+
+.baseTitle{
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  span{
+    font-size: 14px;
+    color: #222222;
+  }
+  &-left{
+    &::before{
+      content: "";
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background: #3B73E6;
+      border-radius: 4px;
+      vertical-align: middle;
+      margin-right: 4px;
+    }
+  }
+  &-right{
+    i,button{
+      color: #2B71EE;
+    }
+  }
+  .divider{
+    flex: 1;
+    border-bottom: 1px solid #E5E6EB;
+    margin: 0 10px;
+  }
+}
+
+/**
+* 盒子布局
+*/
+@mixin flex_layout ($align: center, $justify: center) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+}
+
