@@ -76,7 +76,8 @@
         </div>
         <div class='subject-base-content'>
           <div class='base-content-item'>
-            <pageReveal :listData='getPageReveallList()' :listDetailsData='infoDataDefault'></pageReveal>
+            <Public-Details-Reveal :listData='getPageReveallList()' :modelListData='infoDataDefault'></Public-Details-Reveal>
+            <!-- <pageReveal :listData='getPageReveallList()' :listDetailsData='infoDataDefault'></pageReveal> -->
           </div>
         </div>
       </div>
@@ -122,6 +123,7 @@
 <script>
 import pageReveal from './components/pageReveal.vue'
 import dataCollection from './components/dataCollection.vue'
+import PublicDetailsReveal from '@/components/publicDetailsReveal/index'
 import publicPageTablTool from '@/utils/publicPageTablTool'
 import * as publicPageTool from '@/utils/publicPageTool'
 import * as axios from '@/api/compensate/index'
@@ -151,7 +153,8 @@ export default {
   },
   components: {
     pageReveal,
-    dataCollection
+    dataCollection,
+    PublicDetailsReveal
   },
   created () {
     this.getNonCarClaimsdetail(),
@@ -380,7 +383,6 @@ export default {
      */
     transformationDate (item, state) {
       const dome = new Date(parseInt(item))
-      console.log(dome)
       const year = dome.getFullYear()
       const month = dome.getMonth() + 1 >= 10 ? dome.getMonth() + 1 : `0${dome.getMonth() + 1}`
       const data = dome.getDate() >= 10 ? dome.getDate() : `0${dome.getDate()}`

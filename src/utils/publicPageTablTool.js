@@ -1001,74 +1001,172 @@ class index {
         model: '',
         children: [
           {
-            name: '投保人信息',
+            name: '',
             model: 'policy',
-            type: 'browse',
+            type: 'publicDetalisTable',
             children: [
-              { name: '投保人名称', model: 'insuredPersonName', type: '' },
-              { name: '投保人证件类型', model: 'insuredPersonCardTypeId', type: '' },
-              { name: '投保人证件号', model: 'insuredPersonCardNo', type: '' },
-              { name: '证件照', model: 'businessLicense', type: 'images' },
-              { name: '联系人名称', model: 'connectPersonName', type: '' },
-              { name: '联系人电话', model: 'connectPersonPhone', type: '' },
-              { name: '联系人邮箱', model: 'connectPersonEmail', type: '' },
-              { name: '投保联系人地址', model1: 'insuredPersonProvince', model2: 'insuredPersonCity', model3: 'insuredPersonDistrict',  model: 'insuredPersonAddress', type: 'address' }
+              {
+                type: 'Single',
+                column: 1,
+                column2: '',
+                name: '',
+                children: [
+                  { name: '保单号', key: 'policy', model: 'policyNo', unit: '', type: '', enCode: '' }
+                ]
+              },
+              {
+                type: 'Single',
+                column: 1,
+                column2: '',
+                name: '',
+                children: [
+                  { name: '险种', key: '', model: '', unit: '', type: '', enCode: '' }
+                ]
+              },
+              {
+                type: 'Single',
+                column: 1,
+                column2: '',
+                name: '',
+                children: [
+                  { name: '保险公司', key: '', model: '', unit: '', type: '', enCode: '' }
+                ]
+              },
+              {
+                type: 'multiline',
+                column: 1,
+                column2: 2,
+                name: '投保人',
+                key: '',
+                children: [
+                  { name: '名称', key: 'policy', model: 'insuredPersonName', unit: '', type: '', enCode: '' },
+                  { name: '联系地址', key: 'policy', model: 'insuredPersonAddress', unit: '', type: 'address', enCode: '', model1: 'insuredPersonProvince', model2: 'insuredPersonCity', model3: 'insuredPersonDistrict', },
+                  { name: '联系人', key: 'policy', model: 'connectPersonName', unit: '', type: '', enCode: '' },
+                  { name: '联系电话', key: 'policy', model: 'connectPersonPhone', unit: '', type: '', enCode: '' },
+                  { name: '投保人证件号类型', key: 'policy', model: 'insuredPersonCardTypeId', unit: '', type: 'certificates', enCode: '' }
+                ]
+              },
+              {
+                type: 'multiline',
+                column: 1,
+                column2: 2,
+                name: '被保人',
+                class: 'insured',
+                key: 'insured',
+                children: [
+                  { name: '名称', key: 'corpName', model: 'corpName', unit: '', type: '', enCode: '' },
+                  { name: '联系地址' ,key: 'address', model: 'address', unit: '', type: 'address', enCode: '', model1: 'provinceName', model2: 'cityName', model3: 'districtName' },
+                  { name: '联系人', key: 'connectName', model: 'connectName', unit: '', type: '', enCode: '' },
+                  { name: '联系电话', key: 'connectPhone', model: 'connectPhone', unit: '', type: '', enCode: '' },
+                  { name: '投保人证件号类型', key: 'cardTypeId', model: 'cardTypeId', unit: '', type: 'certificates', enCode: '' }
+                ]
+              },
+              {
+                type: 'Single',
+                column: 1,
+                column2: '',
+                name: '',
+                children: [
+                  { name: '保险期限', key: 'policy', textAlign: 'centent', endTime: 'assureEndDate', startTiem: 'assureStartDate', unit: '', type: 'term', dateType: 'date', enCode: '' }
+                ]
+              },
+              {
+                type: 'Single',
+                column: 1,
+                column2: '',
+                name: '',
+                children: [
+                  { name: '总保险费', textAlign: 'centent', key: 'policy', model: 'totalPremium', unit: '元', type: 'money', enCode: '' }
+                ]
+              },
+              {
+                type: 'Single',
+                column: 1,
+                column2: '',
+                name: '',
+                children: [
+                  { name: '总保险额', textAlign: 'centent', key: '', model: '', unit: '', type: '', enCode: '' }
+                ]
+              },
+              {
+                type: 'Single',
+                column: 1,
+                column2: '',
+                name: '',
+                children: [
+                  { name: '签单日期', textAlign: 'centent', key: '', model: '', unit: '', type: '', enCode: '' }
+                ]
+              },
             ]
-          },
-          {
-            name: '被保人信息',
-            model: 'insured',
-            type: 'table',
-            children: [
-              { name: '序号', model: 'number' },
-              { name: '被保人企业名称', model: 'corpName' },
-              { name: '被保人证件类型', model: 'cardTypeId' },
-              { name: '被保人证件号', model: 'cardNo' },
-              { name: '被保人地址', model: 'address' },
-              { name: '联系人名称', model: 'connectName' },
-              { name: '联系人电话', model: 'connectPhone' },
-              { name: '联系人邮箱', model: 'connectEmail' }
-            ]
-          },
-          {
-            name: '保障期限',
-            model: 'policy',
-            type: 'browse',
-            children: [
-              { name: '起保日期', model: 'assureStartDate', type: 'date' },
-              { name: '终保日期', model: 'assureEndDate', type: 'date' }
-            ]
-          },
-          {
-            name: '职业类别',
-            model: 'occupation',
-            type: 'Array',
-            children: [
-              { name: '职业类型', model: 'occupationName', type: '' },
-              { name: '职业人数', model: 'occupationPersonNum', type: '' }
-            ]
-          },
-          {
-            name: '附加条款',
-            model: 'additionalTerms',
-            val: 'clauseContent',
-            type: 'text',
-            children: []
-          },
-          {
-            name: '免赔金额',
-            model: 'deductible',
-            type: 'text',
-            val: 'clauseContent',
-            children: []
-          },
-          {
-            name: '特别约定',
-            model: 'specialAppointment',
-            type: 'text',
-            val: 'clauseContent',
-            children: []
-          },
+          }
+          //   name: '投保人信息',
+          //   model: 'policy',
+          //   type: 'browse',
+          //   children: [
+          //     { name: '投保人名称', model: 'insuredPersonName', type: '' },
+          //     { name: '投保人证件类型', model: 'insuredPersonCardTypeId', type: '' },
+          //     { name: '投保人证件号', model: 'insuredPersonCardNo', type: '' },
+          //     { name: '证件照', model: 'businessLicense', type: 'images' },
+          //     { name: '联系人名称', model: 'connectPersonName', type: '' },
+          //     { name: '联系人电话', model: 'connectPersonPhone', type: '' },
+          //     { name: '联系人邮箱', model: 'connectPersonEmail', type: '' },
+          //     { name: '投保联系人地址', model1: 'insuredPersonProvince', model2: 'insuredPersonCity', model3: 'insuredPersonDistrict',  model: 'insuredPersonAddress', type: 'address' }
+          //   ]
+          // },
+          // {
+          //   name: '被保人信息',
+          //   model: 'insured',
+          //   type: 'table',
+          //   children: [
+          //     { name: '序号', model: 'number' },
+          //     { name: '被保人企业名称', model: 'corpName' },
+          //     { name: '被保人证件类型', model: 'cardTypeId' },
+          //     { name: '被保人证件号', model: 'cardNo' },
+          //     { name: '被保人地址', model: 'address' },
+          //     { name: '联系人名称', model: 'connectName' },
+          //     { name: '联系人电话', model: 'connectPhone' },
+          //     { name: '联系人邮箱', model: 'connectEmail' }
+          //   ]
+          // },
+          // {
+          //   name: '保障期限',
+          //   model: 'policy',
+          //   type: 'browse',
+          //   children: [
+          //     { name: '起保日期', model: 'assureStartDate', type: 'date' },
+          //     { name: '终保日期', model: 'assureEndDate', type: 'date' }
+          //   ]
+          // },
+          // {
+          //   name: '职业类别',
+          //   model: 'occupation',
+          //   type: 'Array',
+          //   children: [
+          //     { name: '职业类型', model: 'occupationName', type: '' },
+          //     { name: '职业人数', model: 'occupationPersonNum', type: '' }
+          //   ]
+          // },
+          // {
+          //   name: '附加条款',
+          //   model: 'additionalTerms',
+          //   val: 'clauseContent',
+          //   type: 'text',
+          //   children: []
+          // },
+          // {
+          //   name: '免赔金额',
+          //   model: 'deductible',
+          //   type: 'text',
+          //   val: 'clauseContent',
+          //   children: []
+          // },
+          // {
+          //   name: '特别约定',
+          //   model: 'specialAppointment',
+          //   type: 'text',
+          //   val: 'clauseContent',
+          //   children: []
+          // },
         ]
       },
       {
@@ -1080,18 +1178,18 @@ class index {
             model: 'nonCarLregistDTO',
             type: 'browse',
             children: [
-              { name: '保单号', model: 'policyNo' },
-              { name: '报案号码', model: 'registNo' },
-              { name: '报案日期', model: 'reportDate', type: 'date'},
-              { name: '报案人姓名', model: 'reportorName'},
-              { name: '报案人手机号', model: 'reportorPhoneNumber'},
-              { name: '出险日期', model: 'damageStartDate', type: 'date'},
-              { name: '出险地点', model: 'damageAddress'},
-              { name: '出险区域描述', model: 'damageAreaDesc'},
-              { name: '出险原因', model: 'damagereasonDesc'},
-              { name: '联系人名称', model: 'linkerName'},
-              { name: '联系人电话', model: 'phoneNumber'},
-              { name: '联系人地址', model: 'linkerAddress'},
+              { name: '保单号', key: 'nonCarLregistDTO', model: 'policyNo' },
+              { name: '报案号码', key: 'nonCarLregistDTO', model: 'registNo' },
+              { name: '报案日期', key: 'nonCarLregistDTO', model: 'reportDate', type: 'time', enCode: 'date' },
+              { name: '报案人姓名', key: 'nonCarLregistDTO', model: 'reportorName'},
+              { name: '报案人手机号', key: 'nonCarLregistDTO', model: 'reportorPhoneNumber'},
+              { name: '出险日期', key: 'nonCarLregistDTO', model: 'damageStartDate', type: 'time', enCode: 'date' },
+              { name: '出险地点', key: 'nonCarLregistDTO', model: 'damageAddress'},
+              { name: '出险区域描述', key: 'nonCarLregistDTO', model: 'damageAreaDesc'},
+              { name: '出险原因', key: 'nonCarLregistDTO', model: 'damagereasonDesc'},
+              { name: '联系人名称', key: 'nonCarLregistDTO', model: 'linkerName'},
+              { name: '联系人电话', key: 'nonCarLregistDTO', model: 'phoneNumber'},
+              { name: '联系人地址', key: 'nonCarLregistDTO', model: 'linkerAddress'},
             ]
           }
         ]
@@ -1105,17 +1203,17 @@ class index {
             model: 'nonCarLclaimDTO',
             type: 'browse',
             children: [
-              { name: '报案号', model: 'registNo'},
-              { name: '立案号', model: 'claimNo'},
-              { name: '案件类型', model: 'caseType'},
-              { name: '赔款类型', model: 'claimType'},
-              { name: '立案日期', model: 'claimDate', type:'date'},
-              { name: '报案日期', model: 'reportDate', type:'date'},
-              { name: '估损金额', model: 'sumClaim'},
-              { name: '最大估损金额', model: 'maxSumClaim'},
-              { name: '最小估损金额', model: 'minSumClaim'},
-              { name: '初次估损金额', model: 'firstSumClaim'},
-              { name: '直接理赔费用', model: 'directPaidFee'},
+              { name: '报案号', key: 'nonCarLclaimDTO', model: 'registNo'},
+              { name: '立案号', key: 'nonCarLclaimDTO', model: 'claimNo'},
+              { name: '案件类型', key: 'nonCarLclaimDTO', model: 'caseType'},
+              { name: '赔款类型', key: 'nonCarLclaimDTO', model: 'claimType'},
+              { name: '立案日期', key: 'nonCarLclaimDTO', model: 'claimDate', type:'time', enCode: 'time' },
+              { name: '报案日期', key: 'nonCarLclaimDTO', model: 'reportDate', type:'time', enCode: 'time' },
+              { name: '估损金额', key: 'nonCarLclaimDTO', model: 'sumClaim'},
+              { name: '最大估损金额', key: 'nonCarLclaimDTO', model: 'maxSumClaim'},
+              { name: '最小估损金额', key: 'nonCarLclaimDTO', model: 'minSumClaim'},
+              { name: '初次估损金额', key: 'nonCarLclaimDTO', model: 'firstSumClaim'},
+              { name: '直接理赔费用', key: 'nonCarLclaimDTO', model: 'directPaidFee'},
             ]
           }
         ]
@@ -1128,13 +1226,14 @@ class index {
             name: '',
             model: 'nonCarLclaimlossDTOList',
             type: 'collapse',
+            titleModel: '',
             class: 'adjustment1',
             activeNames: [0],
             children: [
-              { name: '损失费用类型', model: 'lossfeeType' },
-              { name: '估损金额', model: 'sumClaim' },
-              { name: '免赔额', model: 'deductible' },
-              { name: '损失详细情况', model: 'itemdetailDesc' },
+              { name: '损失费用类型', key: 'nonCarLclaimlossDTOList', model: 'lossfeeType' },
+              { name: '估损金额', key: 'nonCarLclaimlossDTOList', model: 'sumClaim' },
+              { name: '免赔额', key: 'nonCarLclaimlossDTOList', model: 'deductible' },
+              { name: '损失详细情况', key: 'nonCarLclaimlossDTOList', model: 'itemdetailDesc' },
             ]
           }
         ]
@@ -1148,20 +1247,21 @@ class index {
             model: 'nonCarLcompensateDTOList',
             type: 'collapse',
             class: 'adjustment2',
+            titleModel: '',
             activeNames: [0],
             children: [
-              { name: '结案号', model: 'caseNo' },
-              { name: '预赔金额', model: 'sumPrePaid' },
-              { name: '汇率', model: 'exchRate' },
-              { name: '币种', model: 'currency' },
-              { name: '核赔日期', model: 'underwriteEndDate', type:'date' },
-              { name: '理赔类型', model: 'ltype' },
-              { name: '本次赔付金额', model: 'sumThisPaid' },
-              { name: '总赔付金额', model: 'sumPaid' },
-              { name: '不计赔款金额', model: 'sumNodutyFee' },
-              { name: '责任赔款金额', model: 'sumDutyPaid' },
-              { name: '总损失金额', model: 'sumLoss' },
-              { name: '损余金额', model: 'sumRest' }
+              { name: '结案号', key: 'nonCarLcompensateDTOList', model: 'caseNo' },
+              { name: '预赔金额', key: 'nonCarLcompensateDTOList', model: 'sumPrePaid' },
+              { name: '汇率', key: 'nonCarLcompensateDTOList', model: 'exchRate' },
+              { name: '币种', key: 'nonCarLcompensateDTOList', model: 'currency' },
+              { name: '核赔日期', key: 'nonCarLcompensateDTOList', model: 'underwriteEndDate', type:'time', enCode: 'time' },
+              { name: '理赔类型', key: 'nonCarLcompensateDTOList', model: 'ltype' },
+              { name: '本次赔付金额', key: 'nonCarLcompensateDTOList', model: 'sumThisPaid' },
+              { name: '总赔付金额', key: 'nonCarLcompensateDTOList', model: 'sumPaid' },
+              { name: '不计赔款金额', key: 'nonCarLcompensateDTOList', model: 'sumNodutyFee' },
+              { name: '责任赔款金额', key: 'nonCarLcompensateDTOList', model: 'sumDutyPaid' },
+              { name: '总损失金额', key: 'nonCarLcompensateDTOList', model: 'sumLoss' },
+              { name: '损余金额', key: 'nonCarLcompensateDTOList', model: 'sumRest' }
             ]
           }
         ]
@@ -1175,15 +1275,15 @@ class index {
             model: 'nonCarWebListLpDTO',
             type: 'browse',
             children: [
-              { name: '出险原因说明', model: 'damageReasonDesc' },
-              { name: '案件类型', model: 'caseType' },
-              { name: '估损金额', model: 'sumClaim' },
-              { name: '结案日期', model: 'endcaseDate', type:'date'},
-              { name: '核赔(注销/拒赔)日期', model: 'underwriteEndDate', type:'date'},
-              { name: '共保比率', model: 'coinsRate' },
-              { name: '直接理赔费用', model: 'directpaidFee' },
-              { name: '已决赔款', model: 'settledLoss' },
-              { name: '币种', model: 'currency' }
+              { name: '出险原因说明', key: 'nonCarWebListLpDTO', model: 'damageReasonDesc' },
+              { name: '案件类型', key: 'nonCarWebListLpDTO', model: 'caseType' },
+              { name: '估损金额', key: 'nonCarWebListLpDTO', model: 'sumClaim' },
+              { name: '结案日期', key: 'nonCarWebListLpDTO', model: 'endcaseDate', type:'time', enCode: 'time'},
+              { name: '核赔(注销/拒赔)日期', key: 'nonCarWebListLpDTO', model: 'underwriteEndDate', type:'time', enCode: 'time'},
+              { name: '共保比率', key: 'nonCarWebListLpDTO', model: 'coinsRate' },
+              { name: '直接理赔费用', key: 'nonCarWebListLpDTO', model: 'directpaidFee' },
+              { name: '已决赔款', key: 'nonCarWebListLpDTO', model: 'settledLoss' },
+              { name: '币种', key: 'nonCarWebListLpDTO', model: 'currency' }
             ]
           }
         ]

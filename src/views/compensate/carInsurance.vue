@@ -2,11 +2,23 @@
   <div class='carlnsurance'  v-loading='loadingState'>
     <div class='carlnsurance-head'>
       <div class='carlnsurance-head-list'>
+        <div class='head-list-button'>
+          <el-radio-group v-model="emdCaseStatus" size="small" @change="queryListData">
+            <el-radio-button label="全部"></el-radio-button>
+            <el-radio-button label="未决"></el-radio-button>
+            <el-radio-button label="已决"></el-radio-button>
+          </el-radio-group>
+        </div>
         <div class='head-list-search'>
           <el-input placeholder="保单号/事故号/报案号/车牌号" clearable v-model='searchValue' @clear='queryListData' size="small"></el-input>
           <div class='head-list-query'>
             <el-button slot="suffix" type="primary" size="small" icon="el-icon-search" @click='queryListData'></el-button>
           </div>
+        </div>
+        <div class='head-list-reset'>
+          <el-tooltip effect="dark" content="高级筛选" placement="top">
+            <el-button type="danger" size="small" icon="el-icon-s-operation" @click="drawerState"></el-button>
+          </el-tooltip>
         </div>
       </div>
     </div>
@@ -39,11 +51,13 @@
         <publicPagination v-if='!loadingState' :total='listData.total' :index='pageIndex' :size='pageSize' @setPageInfo='changePageIndex'></publicPagination>
       </div>
     </div>
+    <Public-Advanced-Search :listData='headerList' v-if='advancedSearchState' @operati="advancedSearchOperation"></Public-Advanced-Search>
   </div>
 </template>
 
 <script>
 import tableInfo from '@/utils/publicPageTablTool'
+import PublicAdvancedSearch from '@/components/publicAdvancedSearch/index'
 import * as axios from '@/api/compensate/index'
 import * as publicPageTool from '@/utils/publicPageTool'
 export default {
@@ -54,25 +68,24 @@ export default {
         { name: '保单号', type: 'input', key: 'policyNo', model: '' },
         { name: '事故号码', type: 'input', key: 'accidentNo', model: '' },
         { name: '报案号码', type: 'input', key: 'registNo', model: '' },
-        { name: '被保人', type: 'input', key: 'insuredName', model: '' },
-        { name: '车主', type: 'input', key: 'carOwner', model: '' },
+        { name: '投保人', type: 'input', key: 'insuredPersonName', model: '' },
+        { name: '保险期限', type: 'daterange', startKey: 'assureStartDate', endKey: 'assureEndDate', model: '', },
+        { name: '报案日期', type: 'daterange', startKey: '', endKey: '', model: '', },
         { name: '车牌号', type: 'input', key: 'carNum', model: '' },
-        { name: '终保日期', type: 'date', key: 'assureEndDate', model: '' },
-        { name: '起保日期', type: 'date', key: 'assureStartDate', model: '' },
         { name: '发动机号', type: 'input', key: 'engineNo', model: '' },
         { name: '车架号', type: 'input', key: 'frameNo', model: '' },
-        { name: '投保人', type: 'input', key: 'insuredPersonName', model: '' },
-        { name: '车型名称', type: 'input', key: 'modelName', model: '' },
-        { name: '报案人姓名', type: 'input', key: 'reportorName', model: '' },
-        { name: '报案人电话', type: 'input', key: 'reportormobile', model: '' },
-        { name: '险种名称', type: 'input', key: 'riskName', model: '' }
       ],
+      emdCaseStatus: '未决',
       loadingState: false,
+      advancedSearchState: false,
       pageIndex: 1,
       pageSize: 20,
       listData: {},
       searchValue: ''
     }
+  },
+  components: {
+    PublicAdvancedSearch
   },
   created () {
     this.getCarClaimsQuery()
@@ -101,16 +114,36 @@ export default {
     },
 
     /**
+     * @name 开启高级搜索
+     */
+    drawerState () {
+      this.advancedSearchState = true
+    },
+
+    /**
+     * @name 高级搜索操作
+     */
+    advancedSearchOperation (item) {
+      this.advancedSearchState = false
+      if (item === 'confirm') {
+        this.pageIndex = 1
+        this.getCarClaimsQuery()
+      }
+    },
+
+    /**
      * @name 重置清空查询条件
      */
     resetListData () {
       this.pageIndex = 1
-      // this.headerList = this.headerList.map(el => { return { ...el, model: '' } })
       this.searchValue = ''
+      this.headerListOperati('empty')
       this.getCarClaimsQuery()
     },
-    importListData () {},
-    exportListData () {},
+
+    /**
+     * @name 分页
+     */
     changePageIndex (item) {
       if (item.type === 'size') {
         this.pageSize = item.item
@@ -119,36 +152,65 @@ export default {
       }
       this.getCarClaimsQuery()
     },
+
+    /**
+     * @name 获取车险理赔列表
+     */
+    getCarClaimsQuery () {
+      const params = { ...this.headerListOperati(), pageNum: this.pageIndex, pageSize: this.pageSize, searchValue: this.searchValue }
+      params.emdCaseStatus = this.emdCaseStatus === '全部' ? 'all' : this.emdCaseStatus === '未决' ? 'open' : 'close'
+      this.loadingState = true
+      this.listData = {}
+      axios.getCarClaimsQuery(params).then(res => {
+        this.headerListOperati('empty')
+        this.loadingState = false
+        res.data.records = res.data.records.map((el, index) => { return { ...el, number: (this.pageSize * (this.pageIndex - 1)) + index + 1 }})
+        this.listData = res.data
+      }).catch(() => {
+        this.headerListOperati('empty')
+        this.loadingState = false
+      })
+    },
+
+    /**
+     * @name 搜索列表处理
+     */
+    headerListOperati (item) {
+      if (item === 'empty') {
+        this.headerList = this.headerList.map(el => { return { ...el, model: '' }})
+      } else {
+        const params = {}
+        this.headerList.forEach(el => {
+          if (el.type === 'input') {
+            if (el.model && el.key) {
+              params[el.key] = el.model
+            }
+          } else if (el.type === 'daterange') {
+            if (el.model && el.startKey) {
+              params[el.startKey] = publicPageTool.dateEncode(el.model[0], 'date')
+            }
+            if (el.model && el.endKey) {
+              params[el.endKey] = publicPageTool.dateEncode(el.model[1], 'date')
+            }
+          }
+        })
+        return params
+      }
+    },
+
     /**
      * @name 时间转换
      */
     transformationDate (item) {
       return publicPageTool.transformationDate(item)
     },
+
     /**
      * @name 设置表格头部样式
      */
     pageTableHead () {
       return 'text-align: center; background: #F6F7F9; color: #222222; font-size: 13px; font-weight: bold; padding: 0;'
     },
-    /**
-     * @name 获取车险理赔列表
-     */
-    getCarClaimsQuery () {
-      const params = { pageNum: this.pageIndex, pageSize: this.pageSize, searchValue: this.searchValue }
-      // this.headerList.forEach(el => {
-      //   params[el.key] = el.model
-      // })
-      this.loadingState = true
-      this.listData = {}
-      axios.getCarClaimsQuery(params).then(res => {
-        this.loadingState = false
-        res.data.records = res.data.records.map((el, index) => { return { ...el, number: (this.pageSize * (this.pageIndex - 1)) + index + 1 }})
-        this.listData = res.data
-      }).catch(() => {
-        this.loadingState = false
-      })
-    }
   }
 }
 </script>
