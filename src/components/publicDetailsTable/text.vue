@@ -16,7 +16,12 @@
       {{ termEnCode(params, item)}}
     </template>
     <template v-else>
-      {{ params[item.model] || '无'}}{{item.unit}}
+      <template v-if='params[item.model] === 0'>
+        {{ params[item.model] }}{{item.unit}}
+      </template>
+      <template v-else>
+        {{ params[item.model] || '无'}}{{item.unit}}
+      </template>
     </template>
   </div>
 </template>

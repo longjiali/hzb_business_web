@@ -9,8 +9,15 @@
         <template v-if='item.type === "publicDetalisTable"'>
           <publicDetalisTable :listData='item.children' :modelListData='modelListData'></publicDetalisTable>
         </template>
+        <template v-if='item.type === "publicDetalisTables"'>
+          <detailsTables :listData='item' :modelListData='modelListData'></detailsTables>
+        </template>
         <template v-if='item.type === "browse"'>
           <browseReveal :listData='item' :modelDataList='modelListData' :column='item.column || 3'></browseReveal>
+        </template>
+        <template v-if='item.type === "browses"'>
+          <browsesArray :listData='item' :modelDataList='modelListData' :column='item.column || 3'></browsesArray>
+          <!-- <browsesArray :listData='item' :modelDataList='modelListData' :column='item.column || 3'></browsesArray> -->
         </template>
         <template v-if='item.type === "collapse"'>
           <collapseReveal :listData='item' :modelDataList='modelListData'></collapseReveal>
@@ -22,8 +29,10 @@
 
 <script>
 import publicDetalisTable from '@/components/publicDetailsTable/index'
+import detailsTables from './detailsTables'
 import browseReveal from './browseReveal'
 import collapseReveal from './collapseReveal'
+import browsesArray from './browsesArray'
 export default {
   props: {
     listData: {
@@ -38,7 +47,9 @@ export default {
   components: {
     publicDetalisTable,
     browseReveal,
-    collapseReveal
+    collapseReveal,
+    detailsTables,
+    browsesArray
   }
 }
 </script>

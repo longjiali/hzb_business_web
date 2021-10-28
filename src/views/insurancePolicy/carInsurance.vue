@@ -327,7 +327,7 @@ export default {
     }
     .content-botton-list {
       height: 100%;
-      @include flex_layout(center, space-between);
+      @include flex_layout(center, center);
     }
     .employer-content-pagination {
       margin-top: 20px;

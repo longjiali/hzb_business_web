@@ -169,7 +169,8 @@
         </div>
         <div class='subject-base-content'>
           <div class='base-content-item'>
-            <pageReveal :listData='getPageReveallList()' :listDetailsData='carClaimsDetailList'></pageReveal>
+            <Public-Details-Reveal :listData='getPageReveallList()' :modelListData='carClaimsDetailList'></Public-Details-Reveal>
+            <!-- <pageReveal :listData='getPageReveallList()' :listDetailsData='carClaimsDetailList'></pageReveal> -->
           </div>
         </div>
       </div>
@@ -215,6 +216,7 @@
 <script>
 import pageReveal from './components/pageReveal.vue'
 import dataCollection from './components/dataCollection.vue'
+import PublicDetailsReveal from '@/components/publicDetailsReveal/index'
 import publicPageTablTool from '@/utils/publicPageTablTool'
 import * as publicPageTool from '@/utils/publicPageTool'
 import * as axios from '@/api/compensate/index'
@@ -245,7 +247,8 @@ export default {
   },
   components: {
     pageReveal,
-    dataCollection
+    dataCollection,
+    PublicDetailsReveal
   },
   created () {
     this.getCarClaimsDetail()

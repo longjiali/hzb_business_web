@@ -217,12 +217,24 @@ export function addressEnCode (params, item) {
 }
 
 export function publicEnCode (item, type) {
-  if (!item) {
+  if (!item || !item < 0) {
     return '无'
   }
   if (type === 'certificates') {
     const dome = $store.getters.codeList.find(el => el.id * 1 === item * 1)
     return dome ? dome.dictLabel : '无'
+  } else if (type === 'isvideosurveyFlag') {
+    return item * 1 === 1 ? '视频' : '非视频'
+  } else if (type === 'insuredCarFlag') {
+    return item * 1 === 0 ? '三者' : '标的'
+  } else if (type === 'sex') {
+    return item * 1 === 1 ? '男' : '女'
+  } else if (type === 'bigcaseFlag') {
+    return item * 1 === 1 ? '是' : '否'
+  } else if (type === 'firstSiteFlag') {
+    return item * 1 === 1 ? '第一现场' : item * 1 === 2 ? '第二现场' : '第三现场'
+  } else if (type === 'claimType') {
+    return item * 1 === 0 ? '有责涉及死亡的赔案' : item * 1 === 1 ? '有责不涉及死亡的赔案' : item * 1 === 2 ? '无责赔案' : item * 1 === 3 ? '垫付赔款' : item * 1 === 4 ? '垫付救助基金' : '其他'
   } else {
     return '无'
   }

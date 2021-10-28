@@ -10,12 +10,7 @@
                 <template slot="label">{{ Titem.name }}</template>
                 <template>
                   <div :class="['details-from-text', `details-from-text_${Titem.textAlign}`,]">
-                    <template v-if='!Sitem[Titem.model]'>
-                      无
-                    </template>
-                    <template v-else>
-                      <text-lable :params="Sitem" :item="Titem"></text-lable>
-                    </template>
+                    <text-lable :params="Sitem" :item="Titem"></text-lable>
                   </div>
                 </template>
               </el-descriptions-item>
@@ -126,7 +121,7 @@ export default {
     }
   }
   ::v-deep .el-descriptions-item__label {
-    width: 120px !important;
+    width: 100px !important;
     text-align: center !important;
   }
   ::v-deep .el-descriptions-item__content {

@@ -1,25 +1,23 @@
 <template>
-  <div class='browse-reveal'>
+  <div class="browses-array">
+    <div class='browses-array-item' v-for='(item, index) in modelDataList[listData.model]' :key='index'>
     <el-descriptions :column="column" size="small" border>
-      <el-descriptions-item v-for='(item, index) in listData.children' :key="index">
+      <el-descriptions-item v-for='(Titem, Tindex) in listData.children' :key="Tindex">
         <template slot="label">
-          {{item.name}}
+          {{Titem.name}}
         </template>
         <template>
-          <template v-if='!modelDataList[item.key]'>
-            无
-          </template>
-          <template v-else>
-            <texrFrom :item='item' :params='modelDataList[item.key]'></texrFrom>
-          </template>
+          <texrFrom :item='Titem' :params='item'></texrFrom>
         </template>
       </el-descriptions-item>
     </el-descriptions>
+    </div>
   </div>
 </template>
 
 <script>
 import texrFrom from './textFrom'
+
 export default {
   props: {
     listData: {
@@ -42,7 +40,10 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-.browse-reveal {
+.browses-array {
+  .browses-array-item {
+    margin-top: 15px;
+  }
   ::v-deep .el-descriptions-item__label {
     width: 100px !important;
     text-align: center !important;

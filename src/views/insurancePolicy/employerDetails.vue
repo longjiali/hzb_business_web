@@ -471,7 +471,7 @@ export default {
     }
   }
   ::v-deep .el-descriptions-item__label {
-    min-width: 110px;
+    min-width: 100px;
     text-align: right;
     font-size: 13px;
     color: #333333;
