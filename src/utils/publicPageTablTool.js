@@ -14,10 +14,10 @@ class index {
       {name: "车架号", width: "150px", solt: false, fixed: false, model: "frameNo"},
       {name: "投保人", width: "150px", solt: false, fixed: false, model: "insuredPersonName"},
       {name: "被保人", width: "150px", solt: false, fixed: false, model: "insuredName"},
-      {name: "起保日期", width: "90px", solt: true, fixed: false, model: "assureStartDate"},
-      {name: "终保日期", width: "90px", solt: true, fixed: false, model: "assureEndDate"},
+      {name: "起保日期", width: "90px", solt: true, fixed: false, model: "assureStartDate", type: 'date', enCode: 'date'},
+      {name: "终保日期", width: "90px", solt: true, fixed: false, model: "assureEndDate", type: 'date', enCode: 'date'},
       {name: "保额", width: "80px", solt: false, fixed: false, model: "totalAmount"},
-      {name: "签单日期", width: "90px", solt: true, fixed: false, model: "underwriteEndDate"},
+      {name: "签单日期", width: "90px", solt: true, fixed: false, model: "underwriteEndDate", type: 'date', enCode: 'date'},
       {name: "签单保费", width: "90px", solt: false, fixed: false, model: "totalPremium"},
       {name: "保费收入", width: "90px", solt: false, fixed: false, model: "incomeMoney"},
       {name: "经纪费率", width: "90px", solt: false, fixed: false, model: "disRate"},
@@ -38,10 +38,10 @@ class index {
         {name: "险种名称", width: "120px", solt: false, fixed: false, model: "insuranceName"},
         {name: "投保人", width: "150px", solt: false, fixed: false, model: "insuredPersonName"},
         {name: "被保人", width: "150px", solt: false, fixed: false, model: "insuredName"},
-        {name: "起保日期", width: "90px", solt: true, fixed: false, model: "assureStartDate"},
-        {name: "终保日期", width: "90px", solt: true, fixed: false, model: "assureEndDate"},
+        {name: "起保日期", width: "90px", solt: true, fixed: false, model: "assureStartDate", type: 'date', enCode: 'date'},
+        {name: "终保日期", width: "90px", solt: true, fixed: false, model: "assureEndDate", type: 'date', enCode: 'date'},
         {name: "保额", width: "90px", solt: false, fixed: false, model: "totalAmount"},
-        {name: "签单日期", width: "90px", solt: true, fixed: false, model: "underwriteEndDate"},
+        {name: "签单日期", width: "90px", solt: true, fixed: false, model: "underwriteEndDate", type: 'date', enCode: 'date'},
         {name: "签单保费", width: "90px", solt: false, fixed: false, model: "totalPremium"},
         {name: "保费收入", width: "90px", solt: false, fixed: false, model: "incomeMoney"},
         {name: "经纪费率", width: "90px", solt: false, fixed: false, model: "disRate"},
@@ -55,8 +55,8 @@ class index {
         {name: "险种名称", width: "120px", solt: false, fixed: false, model: "insuranceName"},
         {name: "投保人", width: "", solt: false, fixed: false, model: "insuredPersonName"},
         {name: "被保人", width: "", solt: false, fixed: false, model: "insuredName"},
-        {name: "起保日期", width: "90px", solt: true, fixed: false, model: "assureStartDate"},
-        {name: "终保日期", width: "90px", solt: true, fixed: false, model: "assureEndDate"},
+        {name: "起保日期", width: "90px", solt: true, fixed: false, model: "assureStartDate", type: 'date', enCode: 'date'},
+        {name: "终保日期", width: "90px", solt: true, fixed: false, model: "assureEndDate", type: 'date', enCode: 'date'},
         {name: "保额", width: "90px", solt: false, fixed: false, model: "totalAmount"},
         {name: "保费", width: "90px", solt: false, fixed: false, model: "totalPremium"},
         {name: "操作", width: "80px", solt: true, fixed: 'right', model: "operation"}
@@ -67,9 +67,9 @@ class index {
         {name: "险种名称", width: "", solt: false, fixed: false, model: "insuranceName"},
         {name: "投保人", width: "", solt: false, fixed: false, model: "insuredPersonName"},
         {name: "被保人", width: "", solt: false, fixed: false, model: "insuredName"},
-        {name: "起保日期", width: "", solt: true, fixed: false, model: "assureStartDate"},
-        {name: "终保日期", width: "", solt: true, fixed: false, model: "assureEndDate"},
-        {name: "保费", width: "90px", solt: false, fixed: false, model: "totalPremium"},
+        {name: "起保日期", width: "", solt: true, fixed: false, model: "assureStartDate", type: 'date', enCode: 'date'},
+        {name: "终保日期", width: "", solt: true, fixed: false, model: "assureEndDate", type: 'date', enCode: 'date'},
+        {name: "保费", width: "90px", solt: false, fixed: false, model: "totalPremium", type: 'date', enCode: 'date'},
         {name: "操作", width: "150px", solt: true, fixed: 'right', model: "operation"}
       ]
     }
@@ -88,8 +88,8 @@ class index {
       {name: "报案号", width: "200px", solt: false, fixed: false, model: "registNo"},
       {name: '结案状态', width: '90px', solt: false, fixed: false, model: "emdCaseStatus"},
       {name: "事故号", width: "200px", solt: false, fixed: false, model: "accidentNo"},
-      {name: "报案日期", width: "90px", solt: true, fixed: false, model: "reportDate"},
-      {name: "出险日期", width: "90px", solt: true, fixed: false, model: "damageDate"},
+      {name: "报案日期", width: "90px", solt: true, fixed: false, model: "reportDate", type: 'time', enCode: 'time'},
+      {name: "出险日期", width: "90px", solt: true, fixed: false, model: "damageDate", type: 'time', enCode: 'time'},
       {name: "车牌号", width: "100px", solt: false, fixed: false, model: "carNum"},
       {name: "车架号", width: "200px", solt: false, fixed: false, model: "frameNo"},
       {name: "投保人", width: "150px", solt: false, fixed: false, model: "insuredPersonName"},
@@ -111,8 +111,8 @@ class index {
       {name: "保单号", width: "200px", solt: false, fixed: false, model: "policyNo"},
       {name: "报案号", width: "200px", solt: false, fixed: false, model: "registNo"},
       {name: '结案状态', width: '90px', solt: false, fixed: false, model: "emdCaseStatus"},
-      {name: "报案日期", width: "90px", solt: true, fixed: false, model: "reportDate"},
-      {name: "出险日期", width: "90px", solt: true, fixed: false, model: "damageDate"},
+      {name: "报案日期", width: "90px", solt: true, fixed: false, model: "reportDate", type: 'time', enCode: 'time'},
+      {name: "出险日期", width: "90px", solt: true, fixed: false, model: "damageDate", type: 'time', enCode: 'time'},
       {name: "投保人", width: "150px", solt: false, fixed: false, model: "insuredPersonName"},
       {name: "被保人", width: "150px", solt: false, fixed: false, model: "insuredName"},
       {name: "报案人", width: "150px", solt: false, fixed: false, model: "reportorName"},
@@ -125,196 +125,196 @@ class index {
    * @returns
    */
   getCarInsuranceDetailsTableList () {
-    return [
-      {
-        type: 'Single',
-        column: 2,
-        name: '',
-       children: [
-         { name: '投保人', key: 'carPolicyDTO', model: 'insuredPersonName' },
-         { name: '被保人', key: 'carPolicyDTO', model: 'insuredName' }
-        ] 
-      },
-      {
-        type: 'multiline',
-        column: 1,
-        name: '被保险机动车信息',
-        column2: 2, 
-        children: [
-          { name: '车牌号码', key: 'carCitemcarDTO', model: 'carNum' }, { name: '厂牌型号', key: 'carCitemcarDTO', model: 'modelCode' }, 
-          { name: '发动机号', key: 'carCitemcarDTO', model: 'engineNo' }, { name: '识别代码(车架号)', key: 'carCitemcarDTO', model: 'frameNo' },
-          { name: '核定载客', key: 'carCitemcarDTO', model: 'seatCount' }, { name: '核定载质量', key: 'carCitemcarDTO', model: 'tonCount', unit: '吨' },
-          { name: '新车购置价', key: 'carCitemcarDTO', model: 'purchasePrice', unit: '元' }, { name: '初登日期', key: 'carCitemcarDTO', model: 'enrollDate', type: 'time', enCode: 'date' }
-        ] 
-      },
-      {
-        type: 'multiline',
-        column: 1,
-        name: '责任限额',
-        column2: 2,
-        children: [
-          { name: '车损保费', key: 'carCitemkindDTO', model: 'apremium', unit: '元' }, { name: '车损保额', key: 'carCitemkindDTO', model: 'aamount', unit: '元' },
-          { name: '三者保费', key: 'carCitemkindDTO', model: 'bpremium', unit: '元' }, { name: '三者保额', key: 'carCitemkindDTO', model: 'bamount', unit: '元' }
-        ] 
-      },
-      {
-        type: 'Single',
-        column: 1,
-        name: '',
-        children: [
-          { name: '保险费合计(人民币大写)', model: '', textAlign: 'centent', type: 'money' }
-        ]
-      },
-      {
-        type: 'Single',
-        column: 2,
-        name: '',
-        children: [
-          { name: '车损保额', key: 'carCitemkindDTO', model: 'aamount', unit: '元' },
-          { name: '车损保费', key: 'carCitemkindDTO', model: 'apremium', unit: '元' }
-        ]
-      },
-      {
-        type: 'Single',
-        column: 2,
-        name: '',
-        children: [
-          { name: '三者保额', key: 'carCitemkindDTO', model: 'bamount', unit: '元' },
-          { name: '三者保费', key: 'carCitemkindDTO', model: 'bpremium', unit: '元' }
-        ]
-      },
-      {
-        type: 'Single',
-        column: 1,
-        name: '',
-        children: [
-          { name: '签单日期', model: '', textAlign: 'centent', type: 'date', enCode: 'time' }
-        ]
-      }
-    ]
     // return [
-    //   { 
-    //     name: '基本信息',
-    //     model: 'carPolicyDTO',
+    //   {
+    //     type: 'Single',
+    //     column: 2,
+    //     name: '',
+    //    children: [
+    //      { name: '投保人', key: 'carPolicyDTO', model: 'insuredPersonName' },
+    //      { name: '被保人', key: 'carPolicyDTO', model: 'insuredName' }
+    //     ] 
+    //   },
+    //   {
+    //     type: 'multiline',
+    //     column: 1,
+    //     name: '被保险机动车信息',
+    //     column2: 2, 
     //     children: [
-    //       [ 
-    //         { name: '保单号', model: 'policyNo' },
-    //       ],
-    //       [ 
-    //         { name: '投保人', model: 'insuredPersonName' },
-    //         { name: '被保人', model: 'insuredName' },
-    //       ],
-    //       [ 
-    //         { name: '起保日期', type: 'date', model: 'assureEndDate' },
-    //         { name: '终保日期', type: 'date', model: 'assureStartDate' },
-    //       ],
-    //       [ 
-    //         { name: '保费收入', model: 'incomeMoney' },
-    //         { name: '保额', model: 'totalAmount' },
-    //       ],
-    //       [ 
-    //         { name: '险种代码', model: 'riskCode' },
-    //         { name: '险种名称', model: 'riskName' },
-    //       ],
+    //       { name: '车牌号码', key: 'carCitemcarDTO', model: 'carNum' }, { name: '厂牌型号', key: 'carCitemcarDTO', model: 'modelCode' }, 
+    //       { name: '发动机号', key: 'carCitemcarDTO', model: 'engineNo' }, { name: '识别代码(车架号)', key: 'carCitemcarDTO', model: 'frameNo' },
+    //       { name: '核定载客', key: 'carCitemcarDTO', model: 'seatCount' }, { name: '核定载质量', key: 'carCitemcarDTO', model: 'tonCount', unit: '吨' },
+    //       { name: '新车购置价', key: 'carCitemcarDTO', model: 'purchasePrice', unit: '元' }, { name: '初登日期', key: 'carCitemcarDTO', model: 'enrollDate', type: 'time', enCode: 'date' }
+    //     ] 
+    //   },
+    //   {
+    //     type: 'multiline',
+    //     column: 1,
+    //     name: '责任限额',
+    //     column2: 2,
+    //     children: [
+    //       { name: '车损保费', key: 'carCitemkindDTO', model: 'apremium', unit: '元' }, { name: '车损保额', key: 'carCitemkindDTO', model: 'aamount', unit: '元' },
+    //       { name: '三者保费', key: 'carCitemkindDTO', model: 'bpremium', unit: '元' }, { name: '三者保额', key: 'carCitemkindDTO', model: 'bamount', unit: '元' }
+    //     ] 
+    //   },
+    //   {
+    //     type: 'Single',
+    //     column: 1,
+    //     name: '',
+    //     children: [
+    //       { name: '保险费合计(人民币大写)', model: '', textAlign: 'centent', type: 'money' }
     //     ]
     //   },
     //   {
-    //     name: '车辆信息',
-    //     model: 'carCitemcarDTO',
+    //     type: 'Single',
+    //     column: 2,
+    //     name: '',
     //     children: [
-    //       [ 
-    //         { name: '保单号', model: 'policyNo' },
-    //         { name: '车牌号', model: 'carNum' }
-    //       ],
-    //       [ 
-    //         { name: '车型名称', model: 'modelName' },
-    //         { name: '车型代码', model: 'modelCode' },
-    //         { name: '新车购置价', model: 'purchasePrice' },
-    //       ],
-    //       [ 
-    //         { name: '车架号', model: 'frameNo' },
-    //         { name: '发动机号', model: 'engineNo' },
-    //         { name: '使用年限', model: 'useYears' },
-    //       ],
-    //       [ 
-    //         { name: '座位数', model: 'seatCount' },
-    //         { name: '初登日期', type: 'date', model: 'enrollDate' },
-    //         { name: '核定载质量', model: 'tonCount' },
-    //       ],
+    //       { name: '车损保额', key: 'carCitemkindDTO', model: 'aamount', unit: '元' },
+    //       { name: '车损保费', key: 'carCitemkindDTO', model: 'apremium', unit: '元' }
     //     ]
     //   },
     //   {
-    //     name: '险别信息',
-    //     model: 'carCitemkindDTO',
-    //     type: 'select',
-    //     children: {
-    //       business: [
-    //         [
-    //           { name: '车损保费', model: 'apremium' },
-    //           { name: '车损保额', model: 'aamount' }
-    //         ],
-    //         [
-    //           { name: '三者保费', model: 'bpremium' },
-    //           { name: '三者保额', model: 'bamount' }
-    //         ],
-    //         [
-    //           { name: '车上人员(司机)保费', model: 'd11Premium' },
-    //           { name: '车上人员(司机)保额', model: 'd11Amount' }
-    //         ],
-    //         [
-    //           { name: '车上人员(乘客)保费', model: 'd12Premium' },
-    //           { name: '车上人员(乘客)保额', model: 'd12Amount' }
-    //         ],
-    //         [
-    //           { name: '盗抢保费', model: 'gpremium' },
-    //           { name: '盗抢保额', model: 'gamount' }
-    //         ],
-    //         [
-    //           { name: '新增设备保费', model: 'xpremium' },
-    //           { name: '新增设备保额', model: 'xamount' }
-    //         ],
-    //         [
-    //           { name: '车身划痕损失险保费', model: 'lpremium' },
-    //           { name: '车身划痕损失险保额', model: 'laMount' }
-    //         ],
-    //         [
-    //           { name: '精神损害慰问金责任险保费', model: 'rpremium' },
-    //           { name: '精神损害慰问金责任险保额', model: 'ramount' }
-    //         ],
-    //         [
-    //           { name: '假日限额翻倍险保费', model: 'jiariPremium' },
-    //           { name: '假日限额翻倍险保额', model: 'jiariAmount' }
-    //         ],
-    //         [
-    //           { name: '自燃保费', model: 'zpremium' },
-    //           { name: '自燃保额', model: 'zaMount' }
-    //         ],
-    //         [
-    //           { name: '涉水保费', model: 'x1Premium' },
-    //           { name: '涉水保额', model: 'x1Amount' }
-    //         ],
-    //         [
-    //           { name: '机动车损失险无法找到第三方特约险保费', model: 'null1Premium' },
-    //           { name: '机动车损失险无法找到第三方特约险保额', model: 'null1Amount' }
-    //         ]
-    //       ],
-    //       Jiaoqiang: [
-    //         [
-    //           { name: '死亡伤残赔偿限额', model: '180000元' },
-    //           { name: '无责任死亡伤残赔偿限额', model: '18000元' }
-    //         ],
-    //         [ 
-    //           { name: '医疗费用赔偿限额', model: '18000元' },
-    //           { name: '无责任医疗费用赔偿限额', model: '1800元' },
-    //         ],
-    //         [
-    //           { name: '财产损失赔偿限额', model: '2000元' },
-    //           { name: '无责任财产损失赔偿限额', model: '100元' },
-    //         ]
-    //       ]
-    //     }
+    //     type: 'Single',
+    //     column: 2,
+    //     name: '',
+    //     children: [
+    //       { name: '三者保额', key: 'carCitemkindDTO', model: 'bamount', unit: '元' },
+    //       { name: '三者保费', key: 'carCitemkindDTO', model: 'bpremium', unit: '元' }
+    //     ]
+    //   },
+    //   {
+    //     type: 'Single',
+    //     column: 1,
+    //     name: '',
+    //     children: [
+    //       { name: '签单日期', model: '', textAlign: 'centent', type: 'date', enCode: 'time' }
+    //     ]
     //   }
     // ]
+    return [
+      { 
+        name: '基本信息',
+        model: 'carPolicyDTO',
+        children: [
+          [ 
+            { name: '保单号', model: 'policyNo' },
+          ],
+          [ 
+            { name: '投保人', model: 'insuredPersonName' },
+            { name: '被保人', model: 'insuredName' },
+          ],
+          [ 
+            { name: '起保日期', type: 'time', enCode: 'date', model: 'assureEndDate' },
+            { name: '终保日期', type: 'time', enCode: 'date', model: 'assureStartDate' },
+          ],
+          [ 
+            { name: '保费收入', model: 'incomeMoney' },
+            { name: '保额', model: 'totalAmount' },
+          ],
+          [ 
+            { name: '险种代码', model: 'riskCode' },
+            { name: '险种名称', model: 'riskName' },
+          ],
+        ]
+      },
+      {
+        name: '车辆信息',
+        model: 'carCitemcarDTO',
+        children: [
+          [ 
+            { name: '保单号', model: 'policyNo' },
+            { name: '车牌号', model: 'carNum' }
+          ],
+          [ 
+            { name: '车型名称', model: 'modelName' },
+            { name: '车型代码', model: 'modelCode' },
+            { name: '新车购置价', model: 'purchasePrice' },
+          ],
+          [ 
+            { name: '车架号', model: 'frameNo' },
+            { name: '发动机号', model: 'engineNo' },
+            { name: '使用年限', model: 'useYears' },
+          ],
+          [ 
+            { name: '座位数', model: 'seatCount' },
+            { name: '初登日期', type: 'time', enCode: 'date', model: 'enrollDate' },
+            { name: '核定载质量', model: 'tonCount' },
+          ],
+        ]
+      },
+      {
+        name: '险别信息',
+        model: 'carCitemkindDTO',
+        type: 'select',
+        children: {
+          business: [
+            [
+              { name: '车损保费', model: 'apremium' },
+              { name: '车损保额', model: 'aamount' }
+            ],
+            [
+              { name: '三者保费', model: 'bpremium' },
+              { name: '三者保额', model: 'bamount' }
+            ],
+            [
+              { name: '车上人员(司机)保费', model: 'd11Premium' },
+              { name: '车上人员(司机)保额', model: 'd11Amount' }
+            ],
+            [
+              { name: '车上人员(乘客)保费', model: 'd12Premium' },
+              { name: '车上人员(乘客)保额', model: 'd12Amount' }
+            ],
+            [
+              { name: '盗抢保费', model: 'gpremium' },
+              { name: '盗抢保额', model: 'gamount' }
+            ],
+            [
+              { name: '新增设备保费', model: 'xpremium' },
+              { name: '新增设备保额', model: 'xamount' }
+            ],
+            [
+              { name: '车身划痕损失险保费', model: 'lpremium' },
+              { name: '车身划痕损失险保额', model: 'laMount' }
+            ],
+            [
+              { name: '精神损害慰问金责任险保费', model: 'rpremium' },
+              { name: '精神损害慰问金责任险保额', model: 'ramount' }
+            ],
+            [
+              { name: '假日限额翻倍险保费', model: 'jiariPremium' },
+              { name: '假日限额翻倍险保额', model: 'jiariAmount' }
+            ],
+            [
+              { name: '自燃保费', model: 'zpremium' },
+              { name: '自燃保额', model: 'zaMount' }
+            ],
+            [
+              { name: '涉水保费', model: 'x1Premium' },
+              { name: '涉水保额', model: 'x1Amount' }
+            ],
+            [
+              { name: '机动车损失险无法找到第三方特约险保费', model: 'null1Premium' },
+              { name: '机动车损失险无法找到第三方特约险保额', model: 'null1Amount' }
+            ]
+          ],
+          Jiaoqiang: [
+            [
+              { name: '死亡伤残赔偿限额', model: '180000元' },
+              { name: '无责任死亡伤残赔偿限额', model: '18000元' }
+            ],
+            [ 
+              { name: '医疗费用赔偿限额', model: '18000元' },
+              { name: '无责任医疗费用赔偿限额', model: '1800元' },
+            ],
+            [
+              { name: '财产损失赔偿限额', model: '2000元' },
+              { name: '无责任财产损失赔偿限额', model: '100元' },
+            ]
+          ]
+        }
+      }
+    ]
   }
   /**
    * @name 车险保单报案报案信息录入数据
@@ -504,8 +504,8 @@ class index {
           id: 3,
           children: [
             [
-              { name: '起保日期', model: 'assureStartDate', type: 'date' },
-              { name: '终保日期', model: 'assureEndDate', type: 'date' }
+              { name: '起保日期', model: 'assureStartDate', type: 'time', enCode: 'date' },
+              { name: '终保日期', model: 'assureEndDate', type: 'time', enCode: 'date' }
             ]
           ]
         },
@@ -761,142 +761,146 @@ class index {
         name: '保单信息',
         model: 'carPolicyDTO',
         children: [
-          {
-            name: '',
-            model: 'carClaimsPolicyDTOList',
-            type: 'publicDetalisTables',
-            children: [
-              {
-                type: 'Single',
-                column: 2,
-                name: '',
-                children: [
-                  { name: '投保人', key: 'carPolicyDTO', model: 'insuredPersonName' },
-                  { name: '被保人', key: 'carPolicyDTO', model: 'insuredName' }
-                ] 
-              },
-              {
-                type: 'multiline',
-                column: 1,
-                name: '被保险机动车信息',
-                column2: 2, 
-                children: [
-                  { name: '车牌号码', key: 'carCitemcarDTO', model: 'carNum' }, { name: '厂牌型号', key: 'carCitemcarDTO', model: 'modelCode' }, 
-                  { name: '发动机号', key: 'carCitemcarDTO', model: 'engineNo' }, { name: '识别代码(车架号)', key: 'carCitemcarDTO', model: 'frameNo' },
-                  { name: '核定载客', key: 'carCitemcarDTO', model: 'seatCount' }, { name: '核定载质量', key: 'carCitemcarDTO', model: 'tonCount', unit: '吨' },
-                  { name: '新车购置价', key: 'carCitemcarDTO', model: 'purchasePrice', unit: '元' }, { name: '初登日期', key: 'carCitemcarDTO', model: 'enrollDate', type: 'time', enCode: 'date' }
-                ] 
-              },
-              {
-                type: 'multiline',
-                column: 1,
-                name: '责任限额',
-                column2: 2,
-                children: [
-                  { name: '车损保费', key: 'carCitemkindDTO', model: 'apremium', unit: '元' }, { name: '车损保额', key: 'carCitemkindDTO', model: 'aamount', unit: '元' },
-                  { name: '三者保费', key: 'carCitemkindDTO', model: 'bpremium', unit: '元' }, { name: '三者保额', key: 'carCitemkindDTO', model: 'bamount', unit: '元' }
-                ] 
-              },
-              {
-                type: 'Single',
-                column: 1,
-                name: '',
-                children: [
-                  { name: '保险费合计(人民币大写)', model: '', textAlign: 'centent', type: 'money' }
-                ]
-              },
-              {
-                type: 'Single',
-                column: 2,
-                name: '',
-                children: [
-                  { name: '车损保额', key: 'carCitemkindDTO', model: 'aamount', unit: '元' },
-                  { name: '车损保费', key: 'carCitemkindDTO', model: 'apremium', unit: '元' }
-                ]
-              },
-              {
-                type: 'Single',
-                column: 2,
-                name: '',
-                children: [
-                  { name: '三者保额', key: 'carCitemkindDTO', model: 'bamount', unit: '元' },
-                  { name: '三者保费', key: 'carCitemkindDTO', model: 'bpremium', unit: '元' }
-                ]
-              },
-              {
-                type: 'Single',
-                column: 1,
-                name: '',
-                children: [
-                  { name: '签单日期', model: '', textAlign: 'centent', type: 'date', enCode: 'time' }
-                ]
-              }
-            ]
-          }
-          //   name: '保单信息',
-          //   model: 'carPolicyDTO',
-          //   type: 'browse',
-          //   children: [
-          //     { name: '保单号', model: 'policyNo' },
-          //     { name: '保险公司', model: 'productCompany' },
-          //     { name: '险种名称', model: 'riskName' },
-          //     { name: '投保人', model: 'insuredPersonName' },
-          //     { name: '被保人', model: 'insuredName' },
-          //     { name: '起保日期', model: 'assureStartDate', type: 'date' },
-          //     { name: '终保日期', model: 'assureEndDate',type: 'date' },
-          //     { name: '签单日期', model: 'underwriteEndDate', type: 'date' },
-          //     { name: '签单保费', model: 'totalPremium' },
-          //     { name: '保费收入', model: 'incomeMoney' },
-          //     { name: '手续费比例', model: 'disRate' }
-          //   ]
-          // },
           // {
-          //   name: '车辆信息',
-          //   model: 'carCitemcarDTO',
-          //   type: 'browse',
+          //   name: '',
+          //   model: 'carClaimsPolicyDTOList',
+          //   type: 'publicDetalisTables',
           //   children: [
-          //     { name: '车牌号', model: 'carNum' },
-          //     { name: '车主', model: 'carOwner' },
-          //     { name: '新车购置价', model: 'purchasePrice'},
-          //     { name: '车型名称', model: 'modelName' },
-          //     { name: '座位数', model: 'seatCount' },
-          //     { name: '车架号', model: 'frameNo'},
-          //     { name: '发动机号', model: 'engineNo' },
-          //     { name: '初登日期', model: 'enrollDate', type: 'date' },
-          //     { name: '使用年限', model: 'useYears' },
-          //     { name: '核定载质量(吨)', model: 'tonCount' }
-          //   ]
-          // },
-          // {
-          //   name: '险别信息',
-          //   model: 'carCitemkindDTO',
-          //   type: 'browse',
-          //   column: 2,
-          //   children: [
-          //     { name: '车损保额', model: 'aamount', span: 12 },
-          //     { name: '车损保费', model: 'apremium', span: 12 },
-          //     { name: '三者保额', model: 'bamount', span: 12 },
-          //     { name: '三者保费', model: 'bpremium', span: 12 },
-          //     { name: '车上人员(司机)保额', model: 'd11Premium', span: 12 },
-          //     { name: '车上人员(司机)保费', model: 'd11Amount', span: 12 },
-          //     { name: '盗抢保额', model: 'gamount', span: 12 },
-          //     { name: '盗抢保费', model: 'gpremium', span: 12 },
-          //     { name: '新增设备保额', model: 'xamount', span: 12 },
-          //     { name: '新增设备保费', model: 'xpremium', span: 12 },
-          //     { name: '车身划痕损失险保额', model: 'laMount', span: 12 },
-          //     { name: '车身划痕损失险保费', model: 'lpremium', span: 12 },
-          //     { name: '精神损害慰问金责任险保额', model: 'ramount', span: 12 },
-          //     { name: '精神损害慰问金责任险保费', model: 'rpremium', span: 12 },
-          //     { name: '假日限额翻倍险保额', model: 'jiariAmount', span: 12 },
-          //     { name: '假日限额翻倍险保费', model: 'jiariPremium', span: 12 },
-          //     { name: '自燃保额', model: 'zaMount', span: 12 },
-          //     { name: '自燃保费', model: 'zpremium', span: 12 },
-          //     { name: '涉水保额', model: 'x1Amount', span: 12 },
-          //     { name: '涉水保费', model: 'x1Premium', span: 12 },
-          //     { name: '机动车损失险无法找到第三方特约险保费', model: 'null1Premium', span: 12 },
-          //     { name: '机动车损失险无法找到第三方特约险保额', model: 'null1Amount', span: 12 },
+          //     {
+          //       type: 'Single',
+          //       column: 2,
+          //       name: '',
+          //       children: [
+          //         { name: '投保人', key: 'carPolicyDTO', model: 'insuredPersonName' },
+          //         { name: '被保人', key: 'carPolicyDTO', model: 'insuredName' }
+          //       ] 
+          //     },
+          //     {
+          //       type: 'multiline',
+          //       column: 1,
+          //       name: '被保险机动车信息',
+          //       column2: 2, 
+          //       children: [
+          //         { name: '车牌号码', key: 'carCitemcarDTO', model: 'carNum' }, { name: '厂牌型号', key: 'carCitemcarDTO', model: 'modelCode' }, 
+          //         { name: '发动机号', key: 'carCitemcarDTO', model: 'engineNo' }, { name: '识别代码(车架号)', key: 'carCitemcarDTO', model: 'frameNo' },
+          //         { name: '核定载客', key: 'carCitemcarDTO', model: 'seatCount' }, { name: '核定载质量', key: 'carCitemcarDTO', model: 'tonCount', unit: '吨' },
+          //         { name: '新车购置价', key: 'carCitemcarDTO', model: 'purchasePrice', unit: '元' }, { name: '初登日期', key: 'carCitemcarDTO', model: 'enrollDate', type: 'time', enCode: 'date' }
+          //       ] 
+          //     },
+          //     {
+          //       type: 'multiline',
+          //       column: 1,
+          //       name: '责任限额',
+          //       column2: 2,
+          //       children: [
+          //         { name: '车损保费', key: 'carCitemkindDTO', model: 'apremium', unit: '元' }, { name: '车损保额', key: 'carCitemkindDTO', model: 'aamount', unit: '元' },
+          //         { name: '三者保费', key: 'carCitemkindDTO', model: 'bpremium', unit: '元' }, { name: '三者保额', key: 'carCitemkindDTO', model: 'bamount', unit: '元' }
+          //       ] 
+          //     },
+          //     {
+          //       type: 'Single',
+          //       column: 1,
+          //       name: '',
+          //       children: [
+          //         { name: '保险费合计(人民币大写)', model: '', textAlign: 'centent', type: 'money' }
+          //       ]
+          //     },
+          //     {
+          //       type: 'Single',
+          //       column: 2,
+          //       name: '',
+          //       children: [
+          //         { name: '车损保额', key: 'carCitemkindDTO', model: 'aamount', unit: '元' },
+          //         { name: '车损保费', key: 'carCitemkindDTO', model: 'apremium', unit: '元' }
+          //       ]
+          //     },
+          //     {
+          //       type: 'Single',
+          //       column: 2,
+          //       name: '',
+          //       children: [
+          //         { name: '三者保额', key: 'carCitemkindDTO', model: 'bamount', unit: '元' },
+          //         { name: '三者保费', key: 'carCitemkindDTO', model: 'bpremium', unit: '元' }
+          //       ]
+          //     },
+          //     {
+          //       type: 'Single',
+          //       column: 1,
+          //       name: '',
+          //       children: [
+          //         { name: '签单日期', model: '', textAlign: 'centent', type: 'date', enCode: 'time' }
+          //       ]
+          //     }
           //   ]
           // }
+          {
+            name: '保单信息',
+            model: 'carClaimsPolicyDTOList',
+            type: 'browses',
+            isBrowse: true,
+            children: [
+              { name: '保单号', model: 'policyNo', key: 'carPolicyDTO' },
+              { name: '保险公司', model: 'productCompany', key: 'carPolicyDTO' },
+              { name: '险种名称', model: 'riskName', key: 'carPolicyDTO' },
+              { name: '投保人', model: 'insuredPersonName', key: 'carPolicyDTO' },
+              { name: '被保人', model: 'insuredName', key: 'carPolicyDTO' },
+              { name: '起保日期', model: 'assureStartDate', key: 'carPolicyDTO', type: 'time', enCode: 'date' },
+              { name: '终保日期', model: 'assureEndDate', key: 'carPolicyDTO', type: 'time', enCode: 'date' },
+              { name: '签单日期', model: 'underwriteEndDate', key: 'carPolicyDTO', type: 'time', enCode: 'date' },
+              { name: '签单保费', model: 'totalPremium', key: 'carPolicyDTO' },
+              { name: '保费收入', model: 'incomeMoney', key: 'carPolicyDTO' },
+              { name: '手续费比例', model: 'disRate', key: 'carPolicyDTO' }
+            ]
+          },
+          {
+            name: '车辆信息',
+            model: 'carClaimsPolicyDTOList',
+            type: 'browses',
+            isBrowse: true,
+            children: [
+              { name: '车牌号', key: 'carCitemcarDTO', model: 'carNum' },
+              { name: '车主', key: 'carCitemcarDTO', model: 'carOwner' },
+              { name: '新车购置价', key: 'carCitemcarDTO', model: 'purchasePrice'},
+              { name: '车型名称', key: 'carCitemcarDTO', model: 'modelName' },
+              { name: '座位数', key: 'carCitemcarDTO', model: 'seatCount' },
+              { name: '车架号', key: 'carCitemcarDTO', model: 'frameNo'},
+              { name: '发动机号', key: 'carCitemcarDTO', model: 'engineNo' },
+              { name: '初登日期', key: 'carCitemcarDTO', model: 'enrollDate', type: 'time', enCode: 'date' },
+              { name: '使用年限', key: 'carCitemcarDTO', model: 'useYears' },
+              { name: '核定载质量(吨)', key: 'carCitemcarDTO', model: 'tonCount' }
+            ]
+          },
+          {
+            name: '险别信息',
+            model: 'carClaimsPolicyDTOList',
+            type: 'browses',
+            isBrowse: true,
+            column: 2,
+            children: [
+              { name: '车损保额', key: 'carCitemkindDTO', model: 'aamount', span: 12 },
+              { name: '车损保费', key: 'carCitemkindDTO', model: 'apremium', span: 12 },
+              { name: '三者保额', key: 'carCitemkindDTO', model: 'bamount', span: 12 },
+              { name: '三者保费', key: 'carCitemkindDTO', model: 'bpremium', span: 12 },
+              { name: '车上人员(司机)保额', key: 'carCitemkindDTO', model: 'd11Premium', span: 12 },
+              { name: '车上人员(司机)保费', key: 'carCitemkindDTO', model: 'd11Amount', span: 12 },
+              { name: '盗抢保额', key: 'carCitemkindDTO', model: 'gamount', span: 12 },
+              { name: '盗抢保费', key: 'carCitemkindDTO', model: 'gpremium', span: 12 },
+              { name: '新增设备保额', key: 'carCitemkindDTO', model: 'xamount', span: 12 },
+              { name: '新增设备保费', key: 'carCitemkindDTO', model: 'xpremium', span: 12 },
+              { name: '车身划痕损失险保额', key: 'carCitemkindDTO', model: 'laMount', span: 12 },
+              { name: '车身划痕损失险保费', key: 'carCitemkindDTO', model: 'lpremium', span: 12 },
+              { name: '精神损害慰问金责任险保额', key: 'carCitemkindDTO', model: 'ramount', span: 12 },
+              { name: '精神损害慰问金责任险保费', key: 'carCitemkindDTO', model: 'rpremium', span: 12 },
+              { name: '假日限额翻倍险保额', key: 'carCitemkindDTO', model: 'jiariAmount', span: 12 },
+              { name: '假日限额翻倍险保费', key: 'carCitemkindDTO', model: 'jiariPremium', span: 12 },
+              { name: '自燃保额', key: 'carCitemkindDTO', model: 'zaMount', span: 12 },
+              { name: '自燃保费', key: 'carCitemkindDTO', model: 'zpremium', span: 12 },
+              { name: '涉水保额', key: 'carCitemkindDTO', model: 'x1Amount', span: 12 },
+              { name: '涉水保费', key: 'carCitemkindDTO', model: 'x1Premium', span: 12 },
+              { name: '机动车损失险无法找到第三方特约险保费', key: 'carCitemkindDTO', model: 'null1Premium', span: 12 },
+              { name: '机动车损失险无法找到第三方特约险保额', key: 'carCitemkindDTO', model: 'null1Amount', span: 12 },
+            ]
+          }
         ]
       },
       {

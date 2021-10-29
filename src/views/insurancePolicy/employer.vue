@@ -47,7 +47,7 @@
                 <el-button type="primary" v-if='radioButtonType ==="保单"' plain @click='lookReport(scope.row)' size='mini'>报案</el-button>
               </div>
               <span v-if='item.model === "assureStartDate" || item.model === "assureEndDate" || item.model === "underwriteEndDate" && item.solt'>
-                {{ transformationDate(scope.row[item.model]) }}
+                {{ transformationDate(scope.row, item) }}
               </span>
               <span v-if='item.model === "policyStatus" && item.solt'>
                 {{ scope.row[item.model]  === 0 ? '已报价' : scope.row[item.model]  === 1 ? '投保单' : '保单' }}
@@ -250,8 +250,8 @@ export default {
       })
     },
 
-    transformationDate (item) {
-      return publicPageTool.transformationDate(item)
+    transformationDate (item, Sitem) {
+      return publicPageTool.transformationDate(item[Sitem.model], Sitem.type, Sitem.enCode)
     },
 
     /**

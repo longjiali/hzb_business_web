@@ -17,7 +17,6 @@
         </template>
         <template v-if='item.type === "browses"'>
           <browsesArray :listData='item' :modelDataList='modelListData' :column='item.column || 3'></browsesArray>
-          <!-- <browsesArray :listData='item' :modelDataList='modelListData' :column='item.column || 3'></browsesArray> -->
         </template>
         <template v-if='item.type === "collapse"'>
           <collapseReveal :listData='item' :modelDataList='modelListData'></collapseReveal>

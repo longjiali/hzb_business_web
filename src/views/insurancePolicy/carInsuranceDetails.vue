@@ -1,10 +1,10 @@
 <template>
-<div class='carInsurance-details'>
+<!-- <div class='carInsurance-details'>
   <div class="page-details-table">
     <publicDetailsTable :listData='listData' :modelListData='listDetailsData'></publicDetailsTable>
   </div>
-</div>
-  <!-- <el-main v-loading="loading"  class='carInsurance-details'>
+</div> -->
+  <el-main v-loading="loading"  class='carInsurance-details'>
     <div class='carInsurance-details-list' v-if="JSON.stringify(listDetailsData) !== '{}'">
       <div class='details-list-item' v-for='(item, index) in listData' :key='index'>
         <div class='list-item-head'>
@@ -17,8 +17,8 @@
               <el-col :span='8' v-for='(Sitem, Sindex) in Titem' :key='Sindex'>
                  <el-descriptions>
                   <el-descriptions-item :label="Sitem.name">
-                    <template v-if='Sitem.type === "date"'>
-                       {{ transformationDate(listDetailsData[item.model][Sitem.model]) }}
+                    <template v-if='Sitem.type === "date" || Sitem.type === "time"'>
+                       {{ transformationDate(listDetailsData[item.model], Sitem) }}
                     </template>
                     <template v-else>
                       {{ listDetailsData[item.model][Sitem.model]}}
@@ -49,7 +49,7 @@
         </div>
       </div>
     </div>
-  </el-main> -->
+  </el-main>
 </template>
 <script>
 import LsitInfo from '@/utils/publicPageTablTool'
@@ -82,8 +82,8 @@ export default {
         this.loading = false
       })
     },
-    transformationDate (item) {
-      return publicPageTool.transformationDate(item, 2)
+    transformationDate (item, Sitem) {
+      return publicPageTool.transformationDate(item[Sitem.model], Sitem.type, Sitem.enCode)
     }
   }
 }

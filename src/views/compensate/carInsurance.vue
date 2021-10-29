@@ -42,7 +42,7 @@
                 <el-button type="primary" plain @click='lookDeatils(scope.row.registNo, scope.row.accidentNo)' size='mini'>理赔详情</el-button>
               </div>
               <span v-if='item.model === "reportDate" || item.model === "damageDate" && item.solt'>
-                {{ transformationDate(scope.row[item.model]) }}
+                {{ transformationDate(scope.row, item) }}
               </span>
             </template>
         </el-table-column>
@@ -201,8 +201,8 @@ export default {
     /**
      * @name 时间转换
      */
-    transformationDate (item) {
-      return publicPageTool.transformationDate(item)
+    transformationDate (item, Sitem) {
+      return publicPageTool.transformationDate(item[Sitem.model], Sitem.type, Sitem.enCode)
     },
 
     /**

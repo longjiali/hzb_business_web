@@ -1,6 +1,6 @@
 <template>
   <div class='employer-details' v-loading='loadingState'>
-    <template v-if='$route.query.type * 1 !== 2'>
+    <template v-if='true'>
       <div class='employer-details-step'>
         <div class='step-bar-item' :class='{"step-bar-item_a": item.choose}' v-for='(item, index) in stepsList' @click='changeStepState(item)' :key='index'>
           {{ item.name }}
@@ -48,8 +48,8 @@
                           </div>
                         </div>
                       </template>
-                      <template v-else-if="Sitem.type === 'date'">
-                        {{transformationDate(listDetailsData[item.model] ? listDetailsData[item.model][Sitem.model] : '无')}}
+                      <template v-else-if="Sitem.type === 'date' || Sitem.type === 'time'">
+                        {{ listDetailsData[item.model] ? transformationDate(listDetailsData[item.model], Sitem) : '无'}}
                       </template>
                       <template v-else-if="Sitem.type === 'receiveType'">
                         {{listDetailsData[item.model] ? listDetailsData[item.model][Sitem.model] === 0 ? '纸质发票' : '电子发票' : '无'}}
@@ -146,7 +146,7 @@
         </div>
       </div>
     </template>
-    <template v-if='$route.query.type * 1 === 2'>
+    <template v-if='false'>
       <div class='employer-details-tab'>
         <publicDetailsTable :listData='listData_P' :modelListData='listDetailsData'></publicDetailsTable>
       </div>
@@ -219,8 +219,8 @@ export default {
     /**
      * @name 时间转换
      */
-    transformationDate (item) {
-      return publicPageTool.transformationDate(item)
+    transformationDate (item, Sitem) {
+      return publicPageTool.transformationDate(item, Sitem.type, Sitem.enCode)
     },
 
     /**

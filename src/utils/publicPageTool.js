@@ -33,23 +33,27 @@ export function nCarContrastData (original, newborn) {
 /**
  * @name 时间转换
  */
-export function transformationDate (item) {
+export function transformationDate (item, type, code) {
   if (!item) {
     return '无'
   }
   let dome = ''
-  if (typeof item === 'string')
-    item
+  if (type === 'time') { // 时间戳格式
     dome = new Date(parseInt(item))
-  if (typeof item === 'object')
+  } else if (type === 'date') { // 时间格式
     dome = new Date(item)
+  }
   const data = dome.getDate() >= 10 ? dome.getDate() : `0${dome.getDate()}`
   const month = dome.getMonth() + 1 >= 10 ? dome.getMonth() + 1 : `0${dome.getMonth() + 1}`
   const year = dome.getFullYear()
   const hours = dome.getHours() >= 10 ? dome.getHours() : `0${dome.getHours()}`
   const minutes = dome.getMinutes() >= 10 ? dome.getMinutes() : `0${dome.getMinutes()}`
   const seconds = dome.getSeconds() >= 10 ? dome.getSeconds() : `0${dome.getSeconds()}`
-  return `${year}-${month}-${data} ${hours} : ${minutes} : ${seconds}`
+  if (code === 'date') {
+    return `${year}-${month}-${data}`
+  } else if (code === 'time') {
+    return `${year}-${month}-${data} ${hours} : ${minutes} : ${seconds}`
+  }
 }
 
 /**
